@@ -189,13 +189,20 @@ namespace Food.Controllers.System
 
                 //Create bill -- 2
                 var billId = Guid.NewGuid().ToString();
+
+                int billTotal = 0;
+                billTotal = reTotal + ship - discount;
+                if(billTotal <0 )
+                {
+                    billTotal = 0;
+                }
                 var bill = new Bills()
                 {
                     bill_Id = billId,
                     bill_UserId = userId,
                     bill_Discount = discount,
                     bill_Shipping = ship,
-                    bill_PaidTotal = reTotal + ship - discount,
+                    bill_PaidTotal = billTotal,
                     bill_ProductNamelist = productNameList,
                     bill_ProductPricelist = ProductPriceList,
                     bill_ProductIdlist = productIdList,
