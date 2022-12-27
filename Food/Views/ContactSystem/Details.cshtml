@@ -1,0 +1,43 @@
+﻿@model Food.Entity.ContactSystem
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ContactSystem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Contact_Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Contact_Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Contact_Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Contact_Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Contact_Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

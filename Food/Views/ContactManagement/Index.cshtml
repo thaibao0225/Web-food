@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Food.Entity.ContactUsers>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin/_LayoutAdmin.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cu_FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cu_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cu_Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cu_Description)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cu_FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cu_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cu_Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cu_Description)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

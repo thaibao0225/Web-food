@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Food.Models.OrderConfirmationModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin/_LayoutAdmin.cshtml";
+}
+
+
+
+
+
+<div>
+    <table class="table">
+        <tr>
+            
+            <th>Order Id</th>
+            <th>UserName</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Shipping</th>
+            <th>Discount</th>
+            <th>Total price</th>
+            <th>Confirm</th>
+            
+            <th></th> <!--View detail-->
+            
+            <th></th> <!--Delete-->
+        </tr>
+
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.OrderC_BillId</td>
+                    <td>@item.OrderC_UserName</td>
+                    <td>@item.OrderC_FirstName</td>
+                    <td>@item.OrderC_LastName</td>
+                    <td>@item.OrderC_Email</td>
+                    <td>@item.OrderC_Shiping</td>
+                    <td>@item.OrderC_Discount</td>
+                    <td>@item.OrderC_TotalPrice</td>
+                    <td>
+                        @if (item.OrderC_Confirm)
+                        {
+                            <a asp-action="EditConfirmedList" asp-route-id="@item.OrderC_BillId" class="btn btn-danger ">Confirmed</a>
+                            //convert from confirmed to confirm
+                        }
+                        else
+                        {
+                            <a asp-action="EditConfirmList" asp-route-id="@item.OrderC_BillId" class="btn btn-primary ">Confirm</a>
+                            //convert from confirm to confirmed
+                        }
+                    </td>
+                    
+                    <td><a asp-action="Details" asp-route-id="@item.OrderC_BillId" >View detail</a></td>
+                    
+                    <td><a asp-action="Delete" asp-route-id="@item.OrderC_BillId">Delete</a></td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>
+
+
+
+
+<script src="~/js/OrderConfirmationManagement.js"></script>

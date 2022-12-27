@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Food.Entity.Categories>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin/_LayoutAdmin.cshtml";
+}
+
+
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cg_Name)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cg_Name)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
