@@ -4,12 +4,11 @@
     ViewData["Title"] = "Register";
 }
 <link href="~/css/captcha.css" rel="stylesheet" />
-
+<link href="~/css/login.css" rel="stylesheet" />
 <h1>@ViewData["Title"]</h1>
 
-<div class="row">
-    <div class="col  center">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" onsubmit="return checkform(this);">
+<div class="row" style="margin:auto">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" onsubmit="return checkform(this);" class="center">
             <h4>Create a new account.</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
@@ -35,8 +34,6 @@
             <!-- END CAPTCHA -->
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
-    </div>
-    
 </div>
 
 
