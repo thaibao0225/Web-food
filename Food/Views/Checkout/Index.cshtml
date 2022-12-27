@@ -6,9 +6,6 @@
 
 
 }
-<link href="~/css/checkout.css" rel="stylesheet" />
-<script src="https://js.stripe.com/v3/"></script>
-<script src="~/js/checkout.js"></script>
 <!-- catg header banner section -->
 <section id="aa-catg-head-banner">
     <img src="/images/banner/foodservice-mfg-hero-1920x300.jpg" alt="fashion img">
@@ -155,19 +152,13 @@
                                                 
                                                     @foreach (var item in Model)
                                                     {
-
                                                         int priceProduct = item.checkout_Price * item.checkout_Quantity;
-
 
                                                         <tr>
                                                             <td>@item.checkout_ProductName <strong> x  @item.checkout_Quantity</strong></td>
                                                             <td>$@priceProduct</td>
                                                         </tr>
-
                                                     }
-                                                
-
-
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -192,24 +183,7 @@
                                     <h4>Payment Method</h4>
                                     <div class="aa-payment-method">
                                         <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios"> Cash on Delivery </label>
-                                        <label for="paypal"><input type="radio" id="paypal" name="optionsRadios" checked> Via Paypal </label>
-                                            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark">
-
-
-                                        <!-- Display a payment form -->
-                                        <form id="payment-form">
-                                            <div id="link-authentication-element">
-                                                <!--Stripe.js injects the Link Authentication Element-->
-                                            </div>
-                                            <div id="payment-element">
-                                                <!--Stripe.js injects the Payment Element-->
-                                            </div>
-                                            <button id="submit">
-                                                <div class="spinner hidden" id="spinner"></div>
-                                                <span id="button-text">Pay now</span>
-                                            </button>
-                                            <div id="payment-message" class="hidden"></div>
-                                        </form>
+                                       
 
                                         <input type="submit" onclick="paymentButton()" value="Place Order" class="aa-browse-btn">
                                     </div>
